@@ -1,0 +1,81 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-03T09:01:32.060Z",
+    "end": "2023-04-03T09:01:38.502Z",
+    "duration": 6442,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "85520db9-af20-4806-8139-3a273dc1bcac",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Upazila.cy.js",
+      "file": "cypress\\e2e\\Upazila.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Create Upazila",
+          "fullTitle": "Create Upazila",
+          "timedOut": null,
+          "duration": 6396,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.login(\"admin@gmail.com\", \"IFAdmin123#\");\nupazilapage.ExpandIcon().click();\nupazilapage.Menu().click();\nupazilapage.CreateBtn().click();\ncy.wait(1000);\nupazilapage.SelectDivision().type('বরিশাল').type('{enter}');\nupazilapage.SelectDistrict().type('বরিশাল').type('{enter}');\nupazilapage.NameEn().type('Barishal Sadar');\nupazilapage.NameBN().type('বরিশাল সদর');",
+          "err": {},
+          "uuid": "10d895b9-9d47-4ce3-a82b-04a828468d1a",
+          "parentUUID": "85520db9-af20-4806-8139-3a273dc1bcac",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "10d895b9-9d47-4ce3-a82b-04a828468d1a"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 6396,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
