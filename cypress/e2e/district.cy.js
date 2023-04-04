@@ -3,8 +3,6 @@ import { DistrictPage } from "../pages/System Configuration/districtpage"
 const districtpage = new DistrictPage();
 
 describe('District Test Case', function(){
-
-
 it('DistrictAdd', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     districtpage.ExpandIcon().click()
@@ -28,6 +26,7 @@ it('DistrictAdd', function(){
 
 })
 
+//2nd test case.
 
 it('DistrictAdd', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
