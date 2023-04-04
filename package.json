@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cypress:runDefault": "cypress run --spec cypress/e2e/*.spec.js",
-    "cypress:chrome": "cypress run--browser chrome --spec cypress/e2e/*.cy.js",
+    "cypress:chrome": "cypress run --browser chrome --spec cypress/e2e/*.cy.js",
     "cypress:edge": "cypress run --browser edge --spec cypress/e2e/division.cy.js",
     "cypress:runChromeHeadless": "cypress run --headless --browser chrome --spec cypress/e2e/*.spec.js --record --key "
   },
