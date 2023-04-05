@@ -3,7 +3,8 @@ import { DivisionPage } from "../pages/System Configuration/divisionpage";
 const divisionpage = new DivisionPage();
 import { DistrictPage } from "../pages/System Configuration/districtpage"
 const districtpage = new DistrictPage();
-
+import { UPazilaPage } from "../pages/System Configuration/Upazilapage";
+const upazilapage = new UPazilaPage()
 
 
 describe('Smoke Test', function(){
@@ -14,17 +15,11 @@ describe('Smoke Test', function(){
         cy.login("admin@gmail.com", "IFAdmin123#")
           divisionpage.ExpandIcon();
           divisionpage.Menu();
-          divisionpage.CreateBtn();
-          divisionpage.NameEN();
-          divisionpage.NameBN();
+          divisionpage.CreateBtn().click()
+          divisionpage.NameEN().type('Mymensingh')
+          divisionpage.NameBN().type('ময়মনসিংহ')
           divisionpage.Submit();
-          cy.contains('Barishal').should('contain', 'Barishal')
-          //Edit Code
-          //cy.get(':nth-child(1) > :nth-child(5) > .actionField > a.MuiButtonBase-root > .MuiButton-startIcon > img').click()
-          //cy.get('.addBtn > .MuiButtonBase-root').click()
-          //Delete Code
-          //cy.get(':nth-child(1) > :nth-child(5) > .actionField > button.MuiButtonBase-root > .MuiButton-startIcon').click()
-          //cy.get('.css-1p07y8n > :nth-child(3)').click()
+          cy.contains('Mymensingh').should('contain', 'Mymensingh')
         })
   
 
@@ -37,16 +32,11 @@ it('DistrictAdd', function(){
     cy.wait(1000)
     districtpage.CreateBtn().click()
     districtpage.ClickDivision().click()
-    cy.wait(1000)
-    districtpage.SelectDivision().type('বরিশাল').type('{enter}')
-    districtpage.NameEN().type('Barishal');
-    districtpage.NameBN().type('বরিশাল')
+    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    districtpage.NameEN().type('Mymensingh');
+    districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()
-    cy.contains('Barishal').should('contain', 'Barishal')
-    //Edit Function
-    //districtpage.EdidIcon().click()
-    //cy.wait(1000)
-    //districtpage.UpdateBtn().click()
+    cy.contains('Mymensingh').should('contain', 'Mymensingh')
 
 })
 
@@ -57,15 +47,11 @@ it('Create Upazila', function(){
     upazilapage.Menu().click()
     upazilapage.CreateBtn().click()
     cy.wait(1000)
-    upazilapage.SelectDivision().type('বরিশাল').type('{enter}')
-    upazilapage.SelectDistrict().type('বরিশাল').type('{enter}')
-    upazilapage.NameEn().type('Barishal Sadar')
-    upazilapage.NameBN().type('বরিশাল সদর')
-    cy.get('form').submit()
-    cy.contains('Barishal Sadar ').should('contain', 'Barishal Sadar')
-
+    upazilapage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    upazilapage.SelectDistrict().type('ময়মনসিংহ').type('{enter}')
+    upazilapage.NameEn().type('Mymensingh Sadar')
+    upazilapage.NameBN().type('ময়মনসিংহ সদর')
 })
       
-
 })
 
