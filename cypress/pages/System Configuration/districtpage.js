@@ -12,10 +12,6 @@ export class DistrictPage{
         return cy.get('.exportSec > :nth-child(2) > .MuiButtonBase-root')
     }
 
-    ClickDivision(){
-        return cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root')
-    }
-
     SelectDivision(){
         return cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root')
     }

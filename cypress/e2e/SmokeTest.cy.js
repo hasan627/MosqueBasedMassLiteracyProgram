@@ -31,9 +31,8 @@ it('DistrictAdd', function(){
     districtpage.Menu().click();
     cy.wait(1000)
     districtpage.CreateBtn().click()
-    districtpage.ClickDivision().click()
-    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
     cy.wait(1000)
+    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
     districtpage.NameEN().type('Mymensingh');
     districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()
