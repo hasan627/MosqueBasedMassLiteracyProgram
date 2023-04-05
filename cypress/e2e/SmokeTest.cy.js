@@ -33,6 +33,7 @@ it('DistrictAdd', function(){
     districtpage.CreateBtn().click()
     districtpage.ClickDivision().click()
     districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    cy.wait(1000)
     districtpage.NameEN().type('Mymensingh');
     districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()
@@ -51,6 +52,9 @@ it('Create Upazila', function(){
     upazilapage.SelectDistrict().type('ময়মনসিংহ').type('{enter}')
     upazilapage.NameEn().type('Mymensingh Sadar')
     upazilapage.NameBN().type('ময়মনসিংহ সদর')
+    cy.get('form').submit()
+    cy.contains('ময়মনসিংহ সদর').should('contain', 'ময়মনসিংহ সদর')
+
 })
       
 })
