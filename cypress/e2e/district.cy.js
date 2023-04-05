@@ -10,11 +10,11 @@ it('DistrictAdd', function(){
     cy.wait(1000)
     districtpage.CreateBtn().click()
     districtpage.ClickDivision().click()
-    districtpage.SelectDivision().type('বরিশাল').type('{enter}')
-    districtpage.NameEN().type('Barishal');
-    districtpage.NameBN().type('বরিশাল')
+    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    districtpage.NameEN().type('Mymensingh');
+    districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()
-    cy.contains('Barishal').should('contain', 'Barishal')
+    cy.contains('Mymensingh').should('contain', 'Mymensingh')
     //Edit Function
     districtpage.EdidIcon().click()
     cy.wait(1000)
@@ -35,11 +35,11 @@ it('DistrictAdd', function(){
     cy.wait(1000)
     districtpage.CreateBtn().click()
     districtpage.ClickDivision().click()
-    districtpage.SelectDivision().type('বরিশাল').type('{enter}')
-    districtpage.NameEN().type('Barishal');
-    districtpage.NameBN().type('বরিশাল')
+    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    districtpage.NameEN().type('Mymensingh');
+    districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()
-    cy.contains('Barishal').should('contain', 'Barishal')
+    cy.contains('Mymensingh').should('contain', 'Mymensingh')
 
 })
 })

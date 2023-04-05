@@ -9,11 +9,11 @@ it('DivisionCreate', function(){
   cy.login("admin@gmail.com", "IFAdmin123#")
     divisionpage.ExpandIcon();
     divisionpage.Menu();
-    divisionpage.CreateBtn();
-    divisionpage.NameEN();
-    divisionpage.NameBN();
+    divisionpage.CreateBtn().click()
+    divisionpage.NameEN().type('Mymensingh')
+    divisionpage.NameBN().type('ময়মনসিংহ')
     divisionpage.Submit();
-    cy.contains('Barishal1').should('contain', 'Barishal1')
+    cy.contains('Mymensingh').should('contain', 'Mymensingh')
     //Edit Code
     cy.get(':nth-child(1) > :nth-child(5) > .actionField > a.MuiButtonBase-root > .MuiButton-startIcon > img').click()
     cy.get('.addBtn > .MuiButtonBase-root').click()
@@ -26,10 +26,10 @@ it('DivisionCreate', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     divisionpage.ExpandIcon();
     divisionpage.Menu();
-    divisionpage.CreateBtn();
-    divisionpage.NameEN();
-    divisionpage.NameBN();
+    divisionpage.CreateBtn().click()
+    divisionpage.NameEN().type('Mymensingh')
+    divisionpage.NameBN().type('ময়মনসিংহ')
     divisionpage.Submit();
-    cy.contains('Barishal1').should('contain', 'Barishal1')
+    cy.contains('Mymensingh').should('contain', 'Mymensingh')
   })
 })

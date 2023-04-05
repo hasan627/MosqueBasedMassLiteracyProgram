@@ -8,13 +8,13 @@ export class DivisionPage{
         return cy.get('[href="/admin/system-configuration/division"] > .MuiButtonBase-root').click();
     }
     CreateBtn(){
-        return cy.get('.exportSec > :nth-child(2) > .MuiButtonBase-root').click()
+        return cy.get('.exportSec > :nth-child(2) > .MuiButtonBase-root')
     }
     NameEN(){
-        return cy.get('#nameEnglish').type('Barishal1')
+        return cy.get('#nameEnglish')
     }
     NameBN(){
-        return cy.get('#nameBangla').type('বরিশাল1')
+        return cy.get('#nameBangla')
     }
     Submit(){
         return cy.get('.addBtn > .MuiButtonBase-root').click()
