@@ -7,7 +7,7 @@ const learningcenterpage = new LearningCenterPage()
 //var x = Math.floor((Math.random() * 4)) 
 
 describe('LearningCenterMgmt', function(){
-for(let i=0; i<4; i++){
+for(let i=0; i<1; i++){
 it.only('Learning Center Add', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     learningcenterpage.ExpandIcon().click()
@@ -18,7 +18,7 @@ it.only('Learning Center Add', function(){
     function centerCode_Alpha(){
         var text = "Code";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        for (var i=0; i<4; i++){
+        for (var i=0; i<1; i++){
             text += possible.charAt(Math.random() * possible.length)
 
             return text;
@@ -28,7 +28,7 @@ it.only('Learning Center Add', function(){
     function nameBN_Alpha(){
         var text = "CenterNameBN";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        for (var i=0; i<4; i++){
+        for (var i=0; i<1; i++){
             text += possible.charAt(Math.random() * possible.length)
 
             return text;
@@ -38,7 +38,7 @@ it.only('Learning Center Add', function(){
     function nameEN_Alpha(){
         var text = "CenterNameEN";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        for (var i=0; i<4; i++){
+        for (var i=0; i<1; i++){
             text += possible.charAt(Math.random() * possible.length)
             return text;
         }

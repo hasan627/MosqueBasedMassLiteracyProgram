@@ -33,7 +33,7 @@ export class LearningCenterPage{
         return cy.get('[name="formation_date"]')
     }
     SelectCommitteFormationDate(){
-        return cy.get('.react-datepicker__day--013')
+        return cy.get(':nth-child(2) > .react-datepicker__day--006')
     }
 
     ClickDivision(){

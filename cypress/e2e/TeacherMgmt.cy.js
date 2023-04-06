@@ -8,7 +8,7 @@ describe('Teacher Management', function(){
         teacherpage.ExpandIcon().click()
         teacherpage.ExpandIcon2nd().click()
         teacherpage.Menu().click()
-        teacherpage.CenterCode().click().type('GAZ1').type('{enter}')
+        teacherpage.CenterCode().click().type('CenterNameBNL ').type('{enter}')
         teacherpage.NameEN().type('Mr. X')
         teacherpage.NameBN().type('Name Bangla')
         teacherpage.TeacherClusterId().type('123456')
