@@ -10,6 +10,11 @@ export class TeacherPage{
     Menu(){
         return cy.get('[href="/admin/teacher-management/teacher-info/add"] > .MuiButtonBase-root > .MuiTypography-root')
     }
+
+    AttachWithoutNID(){
+        return cy.get("[name='select_input']")    
+    }
+
     CenterCode(){
         return cy.get("[name='learning_center_id']")
     }
@@ -52,12 +57,23 @@ export class TeacherPage{
     TeacherIs(){
         return cy.get('#mui-component-select-teacher_extra_qual')
     }
+
+    Email(){
+        return cy.get('#email')
+    }
+
+    Password(){
+        return cy.get('#password')
+    }
+
     DegreeName(){
         return cy.get("[name='teacherEducations.0.degreeId']")
     }
+
     Group(){
-        return cy.get("[name='teacherEducations.0.department']")
+        return cy.xpath("//div[@id='mui-component-select-teacherEducations.0.department']")
     }
+
     InstituteName(){
         return cy.get("[name='teacherEducations.0.institute_name']")
     }
@@ -68,10 +84,21 @@ export class TeacherPage{
         return cy.get("[name='teacherEducations.0.passing_year']")
     }
 
+    CGPAType(){
+        //return cy.get('#mui-component-select-teacherEducations.0.type')
+        return cy.xpath("//div[@id='mui-component-select-teacherEducations.0.type']")
+    }
+
     Cgpa(){
         return cy.get("[name='teacherEducations.0.cgpa']")
         
     }
+
+    Division(){
+        return cy.xpath("//div[@id='mui-component-select-teacherEducations.0.division']")
+        
+    }
+    
 
 
 

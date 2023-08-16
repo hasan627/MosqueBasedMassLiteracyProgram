@@ -45,18 +45,18 @@ it.only('Learning Center Add', function(){
     }
 
     learningcenterpage.ClickCenterType().click()
-    learningcenterpage.SelectCenterType().type('প্রাক-প্রাথমিক শিক্ষা কেন্দ্র').type('{enter}');
+    learningcenterpage.SelectCenterType().type('প্রাক-প্রাথমিক শিক্ষা কেন্দ্র').type('{downarrow}').type('{enter}');
     learningcenterpage.ClickCommitteFormationDate().click()
     learningcenterpage.SelectCommitteFormationDate().click()
     learningcenterpage.ClickDivision().click()
     learningcenterpage.SelectDivision().type('চট্টগ্রাম').type("{enter}")
-    learningcenterpage.SelectDistrict().click().type('লক্ষ্মীপুর').type('{enter}')
+    learningcenterpage.SelectDistrict().click().type('লক্ষ্মীপুর').type('{downarrow}').type('{enter}')
     learningcenterpage.SelectUpazila_Citycorporation().type('সিটি কর্পোরেশন{enter}')
     cy.wait(1000)
     learningcenterpage.SelectCityCorporation().click().type('বরিশাল সিটি কর্পোরেশন{enter}')
     learningcenterpage.Union().type('13')
     learningcenterpage.Area().type('Area')
-    learningcenterpage.SelectPlace().click().type('কাছারি').type('{enter}')
+    learningcenterpage.SelectPlace().click().type('কাছারি').type('{downarrow}').type('{enter}')
     learningcenterpage.FileSelect().selectFile('cypress/fixtures/mosque.jpg')
     cy.wait(2000)
     cy.get('form').submit()

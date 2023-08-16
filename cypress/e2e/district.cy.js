@@ -10,7 +10,7 @@ it('DistrictAdd', function(){
     cy.wait(1000)
     districtpage.CreateBtn().click()
     cy.wait(1000)
-    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    districtpage.SelectDivision().type('ময়মনসিংহ').type('{downarrow}').type('{enter}')
     districtpage.NameEN().type('Mymensingh');
     districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()
@@ -35,7 +35,7 @@ it('DistrictAdd', function(){
     cy.wait(1000)
     districtpage.CreateBtn().click()
     cy.wait(1000)
-    districtpage.SelectDivision().type('ময়মনসিংহ').type('{enter}')
+    districtpage.SelectDivision().type('ময়মনসিংহ').type('{downarrow}').type('{enter}')
     districtpage.NameEN().type('Mymensingh');
     districtpage.NameBN().type('ময়মনসিংহ')
     districtpage.Submit().click()

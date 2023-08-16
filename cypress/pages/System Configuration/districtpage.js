@@ -15,6 +15,9 @@ export class DistrictPage{
     SelectDivision(){
         return cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root')
     }
+    GEOCode(){
+        return cy.get('#geo_code')
+    }
     NameEN(){
         return cy.get('#nameEnglish')
     }

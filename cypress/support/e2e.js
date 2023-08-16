@@ -15,10 +15,13 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+require('cypress-xpath')
 
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 // import { LoginPage } from '../pages/loginpage'
 
-import 'cypress-mochawesome-reporter/register'
+//require('cypress-xpath')  //we should include this here to use xpath
+
+import 'cypress-mochawesome-reporter/register';

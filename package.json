@@ -23,10 +23,9 @@
     "url": "https://github.com/hasan627/Islamic-Foundation/issues"
   },
   "homepage": "https://github.com/hasan627/Islamic-Foundation#readme",
-  "dependencies": {
-    "cypress": "^12.9.0"
-  },
   "devDependencies": {
-    "cypress-mochawesome-reporter": "^3.3.0"
+    "cypress": "^12.17.4",
+    "cypress-mochawesome-reporter": "^3.3.0",
+    "cypress-xpath": "^2.0.1"
   }
 }

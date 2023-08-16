@@ -2,14 +2,14 @@
   "stats": {
     "suites": 0,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2023-04-03T09:01:32.060Z",
-    "end": "2023-04-03T09:01:38.502Z",
-    "duration": 6442,
+    "failures": 1,
+    "start": "2023-08-12T10:33:12.811Z",
+    "end": "2023-08-12T10:33:25.395Z",
+    "duration": 12584,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "85520db9-af20-4806-8139-3a273dc1bcac",
+      "uuid": "6de94b92-d1f7-4f0a-8f2d-65704318e12a",
       "title": "",
       "fullFile": "cypress\\e2e\\Upazila.cy.js",
       "file": "cypress\\e2e\\Upazila.cy.js",
@@ -29,29 +29,33 @@
           "title": "Create Upazila",
           "fullTitle": "Create Upazila",
           "timedOut": null,
-          "duration": 6396,
-          "state": "passed",
-          "speed": "medium",
-          "pass": true,
-          "fail": false,
+          "duration": 12502,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
           "pending": false,
-          "context": null,
-          "code": "cy.login(\"admin@gmail.com\", \"IFAdmin123#\");\nupazilapage.ExpandIcon().click();\nupazilapage.Menu().click();\nupazilapage.CreateBtn().click();\ncy.wait(1000);\nupazilapage.SelectDivision().type('বরিশাল').type('{enter}');\nupazilapage.SelectDistrict().type('বরিশাল').type('{enter}');\nupazilapage.NameEn().type('Barishal Sadar');\nupazilapage.NameBN().type('বরিশাল সদর');",
-          "err": {},
-          "uuid": "10d895b9-9d47-4ce3-a82b-04a828468d1a",
-          "parentUUID": "85520db9-af20-4806-8139-3a273dc1bcac",
+          "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\Upazila.cy.js\\\\Create Upazila (failed).png\"\n      }\n    ]\n  ]\n}",
+          "code": "cy.login(\"admin@gmail.com\", \"IFAdmin123#\");\nupazilapage.ExpandIcon().click();\nupazilapage.Menu().click();\nupazilapage.CreateBtn().click();\ncy.wait(1000);\nupazilapage.SelectDivision().type('ময়মনসিংহ').type('{enter}');\nupazilapage.SelectDistrict().type('ময়মনসিংহ').type('{enter}');\nupazilapage.NameEn().type('Mymensingh Sadar');\nupazilapage.NameBN().type('ময়মনসিংহ সদর');\ncy.get('form').submit();\ncy.contains('ময়মনসিংহ সদর').should('contain', 'ময়মনসিংহ সদর');",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 5000ms: Expected to find content: 'ময়মনসিংহ সদর' but never did.",
+            "estack": "AssertionError: Timed out retrying after 5000ms: Expected to find content: 'ময়মনসিংহ সদর' but never did.\n    at Context.eval (webpack:///./cypress/e2e/Upazila.cy.js:15:32)",
+            "diff": null
+          },
+          "uuid": "16fad1e1-f4d3-413a-af4a-d128c5c8c3c6",
+          "parentUUID": "6de94b92-d1f7-4f0a-8f2d-65704318e12a",
           "isHook": false,
           "skipped": false
         }
       ],
       "suites": [],
-      "passes": [
-        "10d895b9-9d47-4ce3-a82b-04a828468d1a"
+      "passes": [],
+      "failures": [
+        "16fad1e1-f4d3-413a-af4a-d128c5c8c3c6"
       ],
-      "failures": [],
       "pending": [],
       "skipped": [],
-      "duration": 6396,
+      "duration": 12502,
       "root": true,
       "rootEmpty": false,
       "_timeout": 2000

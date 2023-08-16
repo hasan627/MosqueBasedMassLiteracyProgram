@@ -1,4 +1,4 @@
-export class UPazilaPage{
+export class UpazilaPage{
     ExpandIcon(){
         return cy.get(':nth-child(2) > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root')
     }
@@ -25,5 +25,9 @@ export class UPazilaPage{
 
     NameBN(){
         return cy.get('#nameBangla')
+    }
+    
+    GEOCode(){
+        return cy.get('#geo_code')
     }
 }

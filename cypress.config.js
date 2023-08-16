@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 
 module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
+  reporter: 'cypress-mochawesome-reporter', //for html reports
   projectId: "Islamic Foundation",
   e2e: {
     watchForFileChanges: false,
