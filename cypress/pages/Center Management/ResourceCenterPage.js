@@ -56,6 +56,9 @@ export class ResourceCenterPage{
     FileSelect(){
         return cy.get('[type="file"]')
     }
+    Caretaker(){
+        return cy.get("[name='caretaker']")
+    }
 
     SubmitBtn(){
         return cy.get('.addBtn > .MuiButtonBase-root')

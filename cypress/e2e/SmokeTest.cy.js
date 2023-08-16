@@ -108,10 +108,9 @@ it('Learning Center Add', function(){
     learningcenterpage.SelectCommitteFormationDate().click()
     learningcenterpage.ClickDivision().click()
     learningcenterpage.SelectDivision().type('চট্টগ্রাম').type('{downarrow}').type('{enter}')
-    learningcenterpage.SelectDistrict().click().type('লক্ষ্মীপুর').type('{downarrow}').type('{enter}')
-    learningcenterpage.SelectUpazila_Citycorporation().type('সিটি কর্পোরেশন').type('{downarrow}').type('{enter}')
-    cy.wait(1000)
-    learningcenterpage.SelectCityCorporation().click().type('বরিশাল সিটি কর্পোরেশন').type('{downarrow}').type('{enter}')
+    learningcenterpage.SelectDistrict().click().type('চট্টগ্রাম').type('{downarrow}').type('{enter}')
+    learningcenterpage.SelectUpazila_Citycorporation().type('সিটি কর্পোরেশন{enter}');
+    learningcenterpage.SelectCityCorporation().click().type('চট্টগ্রাম সিটি কর্পোরেশন').type('{downarrow}').type('{enter}')
     learningcenterpage.Union().type('13')
     learningcenterpage.Area().type('Area')
     learningcenterpage.SelectPlace().click().type('কাছারি').type('{downarrow}').type('{enter}')
@@ -133,7 +132,6 @@ it('ResourceCenterAdd', function(){
         var possible = "0123456789"
         for (var i=0; i<1; i++){
             text += possible.charAt(Math.random() * possible.length)
-
             return text;
         }
     }
@@ -151,10 +149,10 @@ it('ResourceCenterAdd', function(){
     resourcenterpage.SelectDistrict().type('চট্টগ্রাম').type('{downarrow}').type('{enter}')
     resourcenterpage
     resourcenterpage.SelectUpazila_Citycorporation().type('সিটি কর্পোরেশন{enter}');
-    cy.wait(1000)
     resourcenterpage.SelectCityCorporation().click().type('চট্টগ্রাম সিটি কর্পোরেশন').type('{downarrow}').type('{enter}')
     resourcenterpage.Union().type('13')
     resourcenterpage.Area().type('Area')
+    resourcenterpage.Caretaker().type('মডেল কেয়ারটেকার').type('{downarrow}').type('{enter}')
     resourcenterpage.FileSelect().selectFile('cypress/fixtures/mosque.jpg')
     cy.wait(2000)
     cy.get('form').submit()
