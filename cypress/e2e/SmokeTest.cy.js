@@ -166,13 +166,14 @@ it('StudentAdd', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     studentpage.ExpandIcon().click()
     studentpage.Menu().click()
-    studentpage.CenterType().type('প্রাক-প্রাথমিক শিক্ষা কেন্দ্র').type('{downarrow}').type('{enter}')
+    //studentpage.CenterType().type('প্রাক-প্রাথমিক শিক্ষা কেন্দ্র{enter}')
     studentpage.CenterCode().type('লক্ষীপুর কেন্দ্রীয় জামে মসজিদ - LAX1').type('{downarrow}').type('{enter}')
+    studentpage.AttachStudentWithoutNID().type('এনআইডি/জন্ম নিবন্ধন নম্বর ছাড়া').type('{downarrow}').type('{enter}')
     studentpage.StudentNameEN().type(NameEN())
     function NameEN(){
         var text = "StudentNameEN";
         var randomvalue = "0123456789"
-        for (var i=0; i<1; i++){
+        for (var i=0; i<5; i++){
             text += randomvalue.charAt(Math.random() * randomvalue.length)
             return text;
         }
@@ -184,7 +185,7 @@ it('StudentAdd', function(){
     function BCNNumeric(){
         var text = "5534567891025635";
         var randomvalue = "0123456789"
-        for (var i=0; i<1; i++){
+        for (var i=0; i<5; i++){
             text += randomvalue.charAt(Math.random() * randomvalue.length)
             return text;
         }
@@ -193,14 +194,68 @@ it('StudentAdd', function(){
     studentpage.SelectAdmissionDate().click()
     studentpage.BloodGroup().type('বি পজেটিভ').type('{downarrow}').type('{enter}')
     studentpage.Gender().type('পুরুষ').type('{downarrow}').type('{enter}')
-    studentpage.FaterNameEN().type('Test')
-    studentpage.FaterNameBN().type('TestBN')
-    studentpage.FatherNID().type('123')
-    studentpage.FatherMobileNumber().type('332')
-    studentpage.MotherNameEN().type('test1')
-    studentpage.MotherNameBN().type('test')
+    studentpage.FaterNameEN().type('Abu Bakkar')
+    studentpage.FaterNameBN().type('আবু বক্কর')
+    studentpage.FatherNID().type('7302854040')
+    studentpage.FatherMobileNumber().type('01721556627')
+    studentpage.MotherNameEN().type('Amena Begum')
+    studentpage.MotherNameBN().type('আমেনা বেগম')
+    studentpage.MotherNID().type('7302855885')
+    studentpage.ImgAttach().selectFile('cypress/fixtures/hasan.JPEG')
+    cy.wait(5000)
     cy.get('form').submit()
-    cy.wait(1000)
+    cy.wait(2000)
+})
+
+
+it('StudentAddAbsenceofParents', function(){
+    cy.login("admin@gmail.com", "IFAdmin123#")
+    studentpage.ExpandIcon().click()
+    studentpage.Menu().click()
+    //studentpage.CenterType().type('প্রাক-প্রাথমিক শিক্ষা কেন্দ্র{enter}')
+    studentpage.CenterCode().type('লক্ষীপুর কেন্দ্রীয় জামে মসজিদ - LAX1').type('{downarrow}').type('{enter}')
+    studentpage.AttachStudentWithoutNID().type('এনআইডি/জন্ম নিবন্ধন নম্বর ছাড়া').type('{downarrow}').type('{enter}')
+    studentpage.StudentNameEN().type(NameEN())
+    function NameEN(){
+        var text = "StudentNameEN";
+        var randomvalue = "0123456789"
+        for (var i=0; i<5; i++){
+            text += randomvalue.charAt(Math.random() * randomvalue.length)
+            return text;
+        }
+    }
+    studentpage.StudentNameBN().type('studentNameBN')
+    studentpage.ClickDoB().click()
+    studentpage.SelectDoB().click()
+    studentpage.BirthCertificateNo().type(BCNNumeric())
+    function BCNNumeric(){
+        var text = "5534567891025635";
+        var randomvalue = "0123456789"
+        for (var i=0; i<5; i++){
+            text += randomvalue.charAt(Math.random() * randomvalue.length)
+            return text;
+        }
+    } 
+    studentpage.ClickAdmisssiondate().click()
+    studentpage.SelectAdmissionDate().click()
+    studentpage.BloodGroup().type('বি পজেটিভ').type('{downarrow}').type('{enter}')
+    studentpage.Gender().type('পুরুষ').type('{downarrow}').type('{enter}')
+    studentpage.FaterNameEN().type('Abu Bakkar')
+    studentpage.FaterNameBN().type('আবু বক্কর')
+    studentpage.FatherNID().type('7302854040')
+    studentpage.FatherMobileNumber().type('01721556627')
+    studentpage.MotherNameEN().type('Amena Begum')
+    studentpage.MotherNameBN().type('আমেনা বেগম')
+    studentpage.MotherNID().type('7302855885')
+    studentpage.AbsenseParents().click()
+    studentpage.GuardianNameEN().type('Jasim Uddin')
+    studentpage.GuardianNameBN().type('জসীম উদ্দিন')
+    studentpage.GuardianNID().type('7302854638')
+    studentpage.GuardianMobileNo().type('01627559685')
+    studentpage.ImgAttach().selectFile('cypress/fixtures/hasanuzzaman.jpg')
+    cy.wait(5000)
+    cy.get('form').submit()
+    
 })
 
 //Teacher Add
@@ -211,13 +266,13 @@ it('Teacher Add', function(){
     teacherpage.Menu().click()
     teacherpage.AttachWithoutNID().click().type('এনআইডি নম্বর ছাড়া').type('{downarrow}').type('{enter}')
     teacherpage.CenterCode().click().type('সাহাপুর সিরাজউদ্দিন গাজী মেমোরিয়াল উচ্চ বিদ্যালয়').type('{downarrow}').type('{enter}')
-    teacherpage.NameEN().type('Mr. X')
-    teacherpage.NameBN().type('Name Bangla')
+    teacherpage.NameEN().type('Md Azad Mia')
+    teacherpage.NameBN().type('মোঃ আজাদ মিয়া')
     teacherpage.TeacherClusterId().type('123456')
     teacherpage.Gender().click().type('পুরুষ').type('{downarrow}').type('{enter}')
     teacherpage.NID().type('1234568590')
-    teacherpage.FatherName().type('Test')
-    teacherpage.MotherName().type('Test')
+    teacherpage.FatherName().type('Rafiqul Islam')
+    teacherpage.MotherName().type('Amena Begum')
     teacherpage.DoB().click()
     teacherpage.SelectDoB()
     teacherpage.MobileNo().type('0162755896')
@@ -225,18 +280,44 @@ it('Teacher Add', function(){
     teacherpage.TeacherIs().type('ইমাম{enter}')
     teacherpage.Email().type('email@gmail.com')
     teacherpage.Password().type('123456')
-    teacherpage.DegreeName().type('এসএসসি/দাখিল').type('{downarrow}').type('{enter}')
-    teacherpage.Group().click()
-    cy.get('[data-value="Arts"]').click()
-    teacherpage.Board().type('কুমিল্লা').type('{downarrow}').type('{enter}')
-    teacherpage.InstituteName().type('Rupachara Safi Ullah High School');
-    teacherpage.PassingYear().type('২০২৩').type('{downarrow}').type('{enter}')
-    teacherpage.CGPAType().click()
-    cy.get('.MuiList-root > [tabindex="0"]').click()
-    //teacherpage.Cgpa().type('3.33')
-    teacherpage.Division().click()
-    cy.get('.MuiList-root > [tabindex="0"]').click()
-    cy.get('form').submit()
+
+    //How to store input value
+    cy.get('#email').invoke('val').then((inputValue) => {
+        const storedEmailValue = inputValue;
+    cy.log('Store Value is:', storedEmailValue)
+    })
+    //How to store dropdown value
+    teacherpage.DegreeName().type('অনার্স').type('{downarrow}').type('{enter}')
+    cy.xpath("//input[@value='অনার্স']").invoke('val').then((selectedValue) => {
+        const storedDegreeValue = selectedValue;
+    cy.log('Selected Value is:', storedDegreeValue)
+
+    //If else statement
+    if(storedDegreeValue =='এসএসসি/দাখিল' || storedDegreeValue == 'এইচএসসি/আলিম'){
+        teacherpage.Group().should('be.visible')
+        teacherpage.Group().click()
+        cy.get('[data-value="Arts"]').click()
+        teacherpage.Board().type('কুমিল্লা').type('{downarrow}').type('{enter}')
+        teacherpage.InstituteName().type('Rupachara Safi Ullah High School');
+        teacherpage.PassingYear().type('২০২৩').type('{downarrow}').type('{enter}')
+        teacherpage.CGPAType().click()
+        cy.get('.MuiList-root > [tabindex="-1"]').click()
+        teacherpage.Cgpa().type('3.33')
+        cy.get('form').submit()
+    }else{
+        cy.get('#Department').type('CSE')
+        teacherpage.Board().type('ঢাকা বিশ্ববিদ্যালয়').type('{downarrow}').type('{enter}')
+        teacherpage.PassingYear().type('২০২৩').type('{downarrow}').type('{enter}')
+        teacherpage.CGPAType().click()
+        cy.get('.MuiList-root > [tabindex="0"]').click()
+        teacherpage.Division().should('be.visible')
+        teacherpage.Division().click()
+        cy.get('.MuiList-root > [tabindex="0"]').click()
+        cy.get('form').submit()
+    }
+
+    })
+       
 
 })
 

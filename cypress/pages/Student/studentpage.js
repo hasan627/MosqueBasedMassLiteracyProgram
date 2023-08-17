@@ -15,6 +15,10 @@ export class StudentPage{
     CenterCode(){
         return cy.get("[name='learning_center_id']")
     }
+
+    AttachStudentWithoutNID(){
+        return cy.get("[name='select_student_input']")
+    }
     StudentNameEN(){
         return cy.get('#name_en')
     }
@@ -70,6 +74,31 @@ export class StudentPage{
     MotherNameBN(){
         return cy.get('#mother_name_bn')
     }
+    MotherNID(){
+        return cy.get('#mother_nid')
+    }
+    //Information of Gurdian in Absence of Parent's
+    AbsenseParents(){
+        return cy.get('#is_guardian_absent')
+    }
+
+    GuardianNameEN(){
+        return cy.get('#guardian_name_en')
+    }
+    GuardianNameBN(){
+        return cy.get('#guardian_name_bn')
+    }
+    GuardianNID(){
+        return cy.get('#guardian_nid')
+    }
+    GuardianMobileNo(){
+        return cy.get('#guardian_mobile')
+    }
+
+    ImgAttach(){
+        return cy.get('[type="file"]')
+    }
+
 
 
 }
