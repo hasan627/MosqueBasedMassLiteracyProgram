@@ -17,6 +17,10 @@ export class StudentMonthlyAssessmentPage{
         
     }
 
+    Month(){
+        return cy.get("[name='month']")
+    }
+
     CenterType(){
         return cy.get("[name='learningcentertypeId']")
     }
@@ -28,9 +32,6 @@ export class StudentMonthlyAssessmentPage{
         return cy.get('[type="submit"]')
     }
 
-  
-
-    
     Attendance(){
         return cy.get("[name='studentEvalutions.0.attendance']")
     }
@@ -60,6 +61,14 @@ export class StudentMonthlyAssessmentPage{
     }
     VariousKnowledge(){
         return cy.get("[name='studentEvalutions.0.awareness']")
+    }
+
+    Draft(){
+        return cy.get('.MuiTableCell-root > .MuiBox-root > :nth-child(2)')
+    }
+
+    SubmitBtn(){
+        return cy.get('.MuiTableCell-root > .MuiBox-root > :nth-child(3)')
     }
 }
 
