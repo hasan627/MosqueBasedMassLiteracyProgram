@@ -3,7 +3,7 @@ import { DistrictPage } from "../pages/System Configuration/districtpage"
 const districtpage = new DistrictPage();
 
 describe('District Test Case', function(){
-it('DistrictAdd', function(){
+it.only('DistrictAdd', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     districtpage.ExpandIcon().click()
     districtpage.Menu().click();

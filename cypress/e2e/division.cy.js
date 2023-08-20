@@ -31,5 +31,6 @@ it('DivisionCreate', function(){
     divisionpage.NameBN().type('ময়মনসিংহ')
     divisionpage.Submit();
     cy.contains('Mymensingh').should('contain', 'Mymensingh')
+    
   })
 })

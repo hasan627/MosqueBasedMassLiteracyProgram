@@ -70,9 +70,14 @@ export class LearningCenterPage{
     SubmitBtn(){
         return cy.get('.addBtn > .MuiButtonBase-root')
     }
-    YesNoBtn(){
+    
+    YesBtn(){
+        return cy.get('.css-1p07y8n > :nth-child(3)')
+    }
+    NoBtn(){
         return cy.get('.css-1p07y8n > a > .MuiButtonBase-root')
     }
+
     EditIcon(){
         return cy.get(':nth-child(1) > :nth-child(8) > .actionField > [aria-label="হালনাগাদ"] > .MuiButton-startIcon > img')
     }

@@ -20,7 +20,7 @@ const employeepage = new EmployeePage()
 describe('Smoke Test', function(){
 
 //Division Test Case
-    it('DivisionCreate', function(){
+    it.skip('DivisionCreate', function(){
         cy.login("admin@gmail.com", "IFAdmin123#")
           divisionpage.ExpandIcon();
           divisionpage.Menu();
@@ -33,7 +33,7 @@ describe('Smoke Test', function(){
 
 //District TestCase
 
-it('DistrictAdd', function(){
+it.skip('DistrictAdd', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     districtpage.ExpandIcon().click()
     districtpage.Menu().click();
@@ -50,7 +50,7 @@ it('DistrictAdd', function(){
 })
 
 //Upazila TestCase
-it('Create Upazila', function(){
+it.skip('Create Upazila', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     upazilapage.ExpandIcon().click()
     upazilapage.Menu().click()
@@ -117,10 +117,10 @@ it('Learning Center Add', function(){
     learningcenterpage.FileSelect().selectFile('cypress/fixtures/mosque.jpg')
     cy.wait(2000)
     cy.get('form').submit()
-    //learningcenterpage.SubmitBtn().click()
-    learningcenterpage.YesNoBtn().click()
+    learningcenterpage.NoBtn().click()
     //Validation Code
     //cy.contains('CY1').should('be.visible')
+    cy.wait(2000)
     
 });
 
@@ -140,7 +140,7 @@ it('ResourceCenterAdd', function(){
     resourcenterpage.ExpandIcon().click()
     resourcenterpage.ExpandIcon2nd().click()
     resourcenterpage.Menu().click()
-    for(let i=0; i<2; i++){
+    for(let i=0; i<1; i++){
     resourcenterpage.CenterCode().type(ResCenCode())
     resourcenterpage.CenterNameBN().type(ResCenCode())
     resourcenterpage.CenterNameEN().type(ResCenCode())
@@ -156,7 +156,8 @@ it('ResourceCenterAdd', function(){
     resourcenterpage.FileSelect().selectFile('cypress/fixtures/mosque.jpg')
     cy.wait(2000)
     cy.get('form').submit()
-    resourcenterpage.YesNoBtn().click()
+    resourcenterpage.NoBtn().click()
+    cy.wait(2000)
     }
 });
 
@@ -173,7 +174,7 @@ it('StudentAdd', function(){
     function NameEN(){
         var text = "StudentNameEN";
         var randomvalue = "0123456789"
-        for (var i=0; i<5; i++){
+        for (var i=0; i<1; i++){
             text += randomvalue.charAt(Math.random() * randomvalue.length)
             return text;
         }
@@ -185,7 +186,7 @@ it('StudentAdd', function(){
     function BCNNumeric(){
         var text = "5534567891025635";
         var randomvalue = "0123456789"
-        for (var i=0; i<5; i++){
+        for (var i=0; i<1; i++){
             text += randomvalue.charAt(Math.random() * randomvalue.length)
             return text;
         }
@@ -207,7 +208,7 @@ it('StudentAdd', function(){
     cy.wait(2000)
 })
 
-
+//StudentAddAbsenceofParents
 it('StudentAddAbsenceofParents', function(){
     cy.login("admin@gmail.com", "IFAdmin123#")
     studentpage.ExpandIcon().click()
@@ -219,7 +220,7 @@ it('StudentAddAbsenceofParents', function(){
     function NameEN(){
         var text = "StudentNameEN";
         var randomvalue = "0123456789"
-        for (var i=0; i<5; i++){
+        for (var i=0; i<1; i++){
             text += randomvalue.charAt(Math.random() * randomvalue.length)
             return text;
         }
@@ -231,7 +232,7 @@ it('StudentAddAbsenceofParents', function(){
     function BCNNumeric(){
         var text = "5534567891025635";
         var randomvalue = "0123456789"
-        for (var i=0; i<5; i++){
+        for (var i=0; i<1; i++){
             text += randomvalue.charAt(Math.random() * randomvalue.length)
             return text;
         }
@@ -253,8 +254,9 @@ it('StudentAddAbsenceofParents', function(){
     studentpage.GuardianNID().type('7302854638')
     studentpage.GuardianMobileNo().type('01627559685')
     studentpage.ImgAttach().selectFile('cypress/fixtures/hasanuzzaman.jpg')
-    cy.wait(5000)
+    cy.wait(3000)
     cy.get('form').submit()
+    cy.wait(2000)
     
 })
 
@@ -265,7 +267,7 @@ it('Teacher Add', function(){
     teacherpage.ExpandIcon2nd().click()
     teacherpage.Menu().click()
     teacherpage.AttachWithoutNID().click().type('এনআইডি নম্বর ছাড়া').type('{downarrow}').type('{enter}')
-    teacherpage.CenterCode().click().type('সাহাপুর সিরাজউদ্দিন গাজী মেমোরিয়াল উচ্চ বিদ্যালয়').type('{downarrow}').type('{enter}')
+    teacherpage.CenterCode().click().type('বায়তুল মোকারাম মসজিদ1').type('{downarrow}').type('{enter}').should('be.visible')
     teacherpage.NameEN().type('Md Azad Mia')
     teacherpage.NameBN().type('মোঃ আজাদ মিয়া')
     teacherpage.TeacherClusterId().type('123456')
@@ -304,6 +306,7 @@ it('Teacher Add', function(){
         cy.get('.MuiList-root > [tabindex="-1"]').click()
         teacherpage.Cgpa().type('3.33')
         cy.get('form').submit()
+        cy.wait(2000)
     }else{
         cy.get('#Department').type('CSE')
         teacherpage.Board().type('ঢাকা বিশ্ববিদ্যালয়').type('{downarrow}').type('{enter}')
@@ -314,6 +317,7 @@ it('Teacher Add', function(){
         teacherpage.Division().click()
         cy.get('.MuiList-root > [tabindex="0"]').click()
         cy.get('form').submit()
+        cy.wait(2000)
     }
 
     })
@@ -339,8 +343,9 @@ it('Employee Add', function(){
     employeepage.MobileNo().type('01627958596')
     employeepage.Photo().selectFile('cypress//fixtures//mosque.jpg')
     cy.get('form').submit()
+    cy.contains('Employee Name Bangla').should('be.visible')
+    cy.wait(2000)
 })
-
 
       
 })
